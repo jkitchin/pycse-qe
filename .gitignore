@@ -1,0 +1,7 @@
+espresso.*
+pwscf.*
+H2.scf.out
+/.virtual_documents/
+/.jupyter_ystore.db
+/.ipynb_checkpoints/
+/.DS_Store

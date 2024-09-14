@@ -1,0 +1,40 @@
+#+title: Docker for pycse-qe
+
+This provides a Docker image (see [[./Dockerfile]]) for running pycse and Quantum Espresso.
+
+To use this, first clone the repo, and then run the shell script below. This will either build or download the image. It takes ~30 min to build. After that, it should launch Jupyter lab in your browser.
+
+#+BEGIN_SRC sh
+git clone https://github.com/jkitchin/pycse-qe.git
+cd pycse-qe
+./pycse-qe.sh
+#+END_SRC
+
+You can access a terminal in Jupyter lab, or use the Notebook interface.
+
+* Using a shell
+
+Create an input file. Usually you need an editor of some kind. You can use the Jupyter interface to get a basic editor, and then switch to a terminal. Run a command like this.
+
+#+BEGIN_SRC sh
+pw.x < H2.scf.inp > H2.scf.out
+#+END_SRC
+
+You can extract quantities from the output file with grep. For example, to get the total energy use this command.
+
+#+BEGIN_SRC sh
+grep "!    total energy" H2.scf.out
+#+END_SRC
+
+#+RESULTS:
+: !    total energy              =      -2.28788829 Ry
+
+* Using Jupyter lab
+
+See [[./ase-qe.ipynb]] for an example usage.
+
+* Potential limitations
+
+The docker image was built with a Mac (Intel chip). It may have to be rebuilt for Mac Silicon or Windows machines.
+
+The image uses your computer to run QE, so it will be limited by your CPU and RAM availability.
