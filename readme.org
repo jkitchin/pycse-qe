@@ -31,7 +31,10 @@ grep "!    total energy" H2.scf.out
 
 * Using Jupyter lab
 
-See [[./ase-qe.ipynb]] for an example usage.
+To use the notebook interface with shell commands, see [[./qe-shell-notebook.ipynb]]. Note that espresso uses units of Rydbergs for energy.
+
+To use it with ASE and Python, see [[./ase-qe.ipynb]]. Please note that ASE uses atomic units of eV for energy.
+
 
 * Potential limitations
 
